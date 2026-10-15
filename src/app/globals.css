@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #090a0f;
+  --color-panel: #12141c;
+  --color-panel2: #181b26;
+  --color-line: #252938;
+  --color-brand: #f97316;
+  --color-brand-soft: #fb923c;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+    monospace;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(900px 420px at 80% -10%, rgba(249, 115, 22, 0.1), transparent 60%),
+    radial-gradient(700px 380px at -10% 110%, rgba(99, 102, 241, 0.08), transparent 60%);
+  background-attachment: fixed;
+  color: #e4e4e7;
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: rgba(249, 115, 22, 0.35);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2c3144 transparent;
+}
+
+@keyframes tn-pop {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes tn-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.tn-pop {
+  animation: tn-pop 0.18s ease-out;
+}
+
+.tn-fade {
+  animation: tn-fade 0.15s ease-out;
+}
+
+@keyframes tn-caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+.tn-caret {
+  animation: tn-caret 1s steps(1) infinite;
+}
